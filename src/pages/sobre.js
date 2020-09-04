@@ -33,7 +33,10 @@ const About = ({ className, t, social }) => {
 				<meta property="og:url" content={`${env.baseUrl}/sobre`} />
 				<meta property="og:description" content="O podcast da maior do Interior. Pré-jogo, Pós-jogo, Resenhas, Entrevistas e muito mais da Ponte Preta, a nossa Macaca Querida de Campinas." />
 				<meta property="og:image" content={`${env.baseUrl}/static/images/macacast_macaco.png`} />
+				<meta property="og:image:alt" content="Sobre | Macacast" />
 				<meta property="og:locale" content="pt_BR" />
+				<meta property="og:site_name" content="Macacast" />
+				<meta property="og:type" content="website" />
 
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@macacastaapp" />

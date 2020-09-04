@@ -36,7 +36,10 @@ const Podcast = ({ t, social, podcast, podcasts }) => {
 				<meta property="og:url" content={`${env.baseUrl}/podcasts/${podcast.episode}`} />
 				<meta property="og:description" content={podcast.description} />
 				<meta property="og:image" content={podcast.img} />
+				<meta property="og:image:alt" content={podcast.title} />
 				<meta property="og:locale" content="pt_BR" />
+				<meta property="og:site_name" content="Macacast" />
+				<meta property="og:type" content="website" />
 
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@macacastaapp" />
