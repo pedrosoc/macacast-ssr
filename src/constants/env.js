@@ -1,2 +1,2 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://macacast-ssr.vercel.app";
 export default { baseUrl };
