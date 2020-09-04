@@ -13,6 +13,8 @@ import PodcastList from "@/features/podcast/components/PodcastList";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import env from "@/constants/env";
+
 const Podcast = ({ t, social, podcast, podcasts }) => {
 	if (!podcast || !podcast.id)
 		return <Fragment />

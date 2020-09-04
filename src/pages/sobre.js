@@ -13,6 +13,8 @@ import Section from "@/components/Section";
 import containerTypes from "@/constants/containerTypes";
 import { withTranslation } from "@i18n";
 
+import env from "@/constants/env";
+
 const About = ({ className, t, social }) => {
 	return (
 		<Fragment>

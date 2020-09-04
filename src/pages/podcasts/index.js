@@ -11,6 +11,8 @@ import Section from "@/components/Section";
 
 import PodcastFeed from "@/features/podcast/components/PodcastFeed";
 
+import env from "@/constants/env";
+
 const Podcasts = ({ social, podcasts }) => {
 	return (
         <Fragment>
