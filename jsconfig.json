@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "paths": {
+        "@api": ["_config/api"],
+        "@i18n": ["_config/i18n"],
+        "@firebaseApi": ["_config/firebase"],
+        "@global-style": ["_config/css/globalStyle"],
+        "@/*": ["*"]
+      }
+    }
+  }

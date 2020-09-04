@@ -1,0 +1,26 @@
+{
+  "name": "macacast-ssr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lucas Pedroso",
+  "license": "ISC",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "firebase": "^7.19.1",
+    "next": "^9.5.2",
+    "next-i18next": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-player": "^2.6.1",
+    "react-responsive": "^8.1.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
+  }
+}
