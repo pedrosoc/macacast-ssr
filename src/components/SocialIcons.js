@@ -14,7 +14,8 @@ const SocialIcons = ({ className, uuid, title, size, distance, fill, socialList 
 		<div className={className}>
 			<h4> {title} </h4>
 			<div>
-				{socialList.map(s => <a 
+				{socialList.map(s => <a
+					aria-label={s.name}
 					key={`${s.name}_${uuid}`}
 					target="_blank"
 					rel="noopener noreferrer"

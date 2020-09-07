@@ -110,14 +110,16 @@ export default withTranslation("common")(styled(About)`
 	}
 
 	& a {
+		font-family: "Roboto", sans-serif;
+		font-size: 18px;
 		color: #111;
 
 		& span {
 			margin-right: 10px;
 		
 			&.link {
-				color: rgba(0,0,0,.68);
-				border-bottom: solid 1px rgba(0,0,0,.68);
+				color: rgba(0, 0, 0, .68);
+				border-bottom: solid 1px rgba(0, 0, 0, .68);
 			}
 		}
 	}

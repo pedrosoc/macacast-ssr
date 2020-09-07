@@ -31,7 +31,7 @@ export default styled(PodcastCardInfoHeader)`
 
     & span {
         font-size: 16px;
-        color: rgba(0,0,0,.4);
+        color: rgba(0, 0, 0, .54);
         width: 125px;
     }
 `;

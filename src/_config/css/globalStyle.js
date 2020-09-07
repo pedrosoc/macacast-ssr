@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
 
     text-decoration: none;
-    color: rgba(0,0,0,.68);;
+    color: rgba(0, 0, 0, .68);;
   }
 `;
 
