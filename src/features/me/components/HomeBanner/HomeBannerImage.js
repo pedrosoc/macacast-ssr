@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 
 import { withTranslation } from "@i18n";
 
+import images from "@/constants/images";
+
 const HomeBannerImage = ({ className, t }) => {
 	return (
 		<img
-			src="/static/images/macacast_macaco.png"
+			src={images.logo}
 			alt={t("home.altImage")}
 			className={className}
 		/>

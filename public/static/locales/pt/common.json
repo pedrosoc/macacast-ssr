@@ -1,9 +1,4 @@
 {
-    "home": {
-        "title": "MACACAST",
-        "subtitle": "O PODCAST DA MAIOR DO INTERIOR",
-        "altImage": "Logo - Macacast"
-    },
     "header": {
         "title": "Menu",
         "closeSymbol": "X",
@@ -16,16 +11,62 @@
         "copyright": "© Copyright 2020",
         "title": "Macacast - O podcast da maior do interior"
     },
+    "home": {
+        "title": "MACACAST",
+        "subtitle": "O PODCAST DA MAIOR DO INTERIOR",
+        "altImage": "Logo - Macacast",
+        "meta": {
+            "title": "Macacast",
+            "description": "O podcast da maior do Interior. Pré-jogo, Pós-jogo, Resenhas, Entrevistas e muito mais da Ponte Preta, a nossa Macaca Querida de Campinas.",
+            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
+        }
+    },
     "about": {
-        "title": "Sobre o projeto"
+        "title": "Sobre o projeto",
+        "description": "Nascido em 2019, o projeto de um podcast criado por pontepretanos para pontepretanos tem um objetivo primordial claro: resgatar o interesse dos torcedores e torcedoras pelo clube, com informações quentes, com opiniões isentas e contundentes, com histórias sobre o seu passado e reforçar a identidade da Ponte Preta. O dia a dia do clube, pós e pré-jogo, entrevistas exclusivas com jogadores que marcaram seu nome em nossa história e até bastidores políticos. O Macacast é a voz do pontepretano das arquibancadas na internet.",
+        "help": {
+            "title": "Ajude o Macacast",
+            "description": "Se você curte o nosso trabalho, não deixe de nos prestigiar e ajude a melhorar ainda mais a qualidade do seu podcast preferido e a sua experiência como ouvinte. Fazemos o Macacast com muita paixão e, com as doações, podemos fazer ainda melhor e nos dedicar ainda mais ao projeto. O valor será investido na melhoria de materiais, como a compra de microfones para os membros, pagamento de servidores, gravações, e manutenção de outras estruturas.",
+            "link": {
+                "description": "Você pode fazer a sua doação de duas formas:",
+                "monthly": "Mensalmente:",
+                "monthlyLink": "apoia.se/macacast",
+                "single": "Avulsa:",
+                "singleLink": "apoia.se/ajudeomacacast"
+            },
+            "sponsor": "Se você deseja ser patrocinador oficial do projeto, entre em contato conosco por meio de nossas plataformas digitais. Temos certeza de que, com a audiência que temos, a parceria renderá muitos frutos para sua empresa."
+        },
+        "meta": {
+            "title": "Sobre | Macacast",
+            "description": "O podcast da maior do Interior. Pré-jogo, Pós-jogo, Resenhas, Entrevistas e muito mais da Ponte Preta, a nossa Macaca Querida de Campinas.",
+            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
+        }
     },
     "podcast": {
-        "avaiableFor": "Disponível também em:"
+        "avaiableFor": "Disponível também em:",
+        "meta": {
+            "title": "Episódio #{{episode}} | {{title}} | Podcasts | Macacast",
+            "description": "{{description}}",
+            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha",
+            "socialTitle": "Episódio #{{episode}} | {{title}}"
+        }
     },
     "podcasts": {
         "title": "Podcasts",
         "lastEpisodes": "Últimos episódios",
         "seeMore": "Veja mais +",
-        "anotherEpisodes": "Demais episódios"
+        "anotherEpisodes": "Demais episódios",
+        "meta": {
+            "title": "Podcasts | Macacast",
+            "description": "O podcast da maior do Interior. Pré-jogo, Pós-jogo, Resenhas, Entrevistas e muito mais da Ponte Preta, a nossa Macaca Querida de Campinas.",
+            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
+        }
+    },
+    "error": {
+        "title": "Página não encontrada",
+        "description": "A página que você está procurando não existe :(",
+        "meta": {
+            "title": "Página não encontrada"
+        }
     }
 }
