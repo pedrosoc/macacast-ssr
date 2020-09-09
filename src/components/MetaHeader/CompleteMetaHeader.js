@@ -32,6 +32,8 @@ const CompleteMetaHeader = ({ t, meta, podcast }) => (
         <meta name="twitter:title" content={meta.socialTitle(t, podcast) ? meta.socialTitle(t, podcast) : meta.title(t, podcast)} />
         <meta name="twitter:description" content={meta.description(t, podcast)} />
         <meta name="twitter:image" content={meta.image(podcast)} />
+
+        <meta property="fb:app_id" content="612818166073904" />
     </Head>
 );
 
