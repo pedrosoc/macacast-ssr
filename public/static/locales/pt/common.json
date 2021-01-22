@@ -42,24 +42,23 @@
             "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
         }
     },
-    "podcast": {
+    "contentPost": {
         "avaiableFor": "Disponível também em:",
         "meta": {
-            "title": "Episódio #{{episode}} | {{title}} | Podcasts | Macacast",
+            "title": "{{title}} | Macacast",
             "description": "{{description}}",
-            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha",
-            "socialTitle": "Episódio #{{episode}} | {{title}}"
+            "keywords": "Ponte Preta, Podcast, Noticias, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
         }
     },
-    "podcasts": {
-        "title": "Podcasts",
-        "lastEpisodes": "Últimos episódios",
+    "content": {
+        "title": "{{name}}",
+        "lastEpisodes": "Últimas publicações",
         "seeMore": "Veja mais +",
-        "anotherEpisodes": "Demais episódios",
+        "anotherEpisodes": "Outras publicações",
         "meta": {
-            "title": "Podcasts | Macacast",
-            "description": "O podcast da maior do Interior. Pré-jogo, Pós-jogo, Resenhas, Entrevistas e muito mais da Ponte Preta, a nossa macaca querida de Campinas.",
-            "keywords": "Ponte Preta, Podcast, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
+            "title": "{{name}} | Macacast",
+            "description": "{{description}}",
+            "keywords": "Ponte Preta, Podcast, Noticias, Campinas, Ponte, Macaca, Maior do Interior, Entrevista, Resenha"
         }
     },
     "error": {

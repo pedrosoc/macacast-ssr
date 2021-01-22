@@ -8,21 +8,22 @@ import styles from "@/constants/styles";
 import HeaderMenuMobile from "./mobile/HeaderMenuMobile";
 import HeaderMenuDesktop from "./desktop/HeaderMenuDesktop";
 
-const HeaderMenu = ({ social }) => {
+const HeaderMenu = ({ contents, social }) => {
 	return (
 		<Fragment>
 			<MediaQuery maxDeviceWidth={styles.breakpoint_medium_max}>
-				<HeaderMenuMobile social={social} />
+				<HeaderMenuMobile contents={contents} social={social} />
 			</MediaQuery>
 			<MediaQuery minDeviceWidth={styles.breakpoint_medium}>
-				<HeaderMenuDesktop social={social}  />
+				<HeaderMenuDesktop contents={contents} social={social}  />
 			</MediaQuery>
 		</Fragment>
 	);
 };
 
 HeaderMenu.propTypes = {
-	social: PropTypes.array
+    social: PropTypes.array,
+    contents: PropTypes.array
 };
 
 export default HeaderMenu;

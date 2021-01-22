@@ -4,7 +4,7 @@ import { createSitemap } from "@/utils/seo";
 const Sitemap = () => {};
 
 Sitemap.getInitialProps = async ({ res }) => {
-    const podcasts = await api.podcast.data.getAll();
+    const podcasts = await api.content.data.getAll();
     
     res.setHeader("Content-Type", "text/xml");
     res.write(createSitemap(podcasts));

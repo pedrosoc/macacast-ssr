@@ -7,12 +7,14 @@ import HeaderContainer from "./HeaderContainer";
 import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
 
+import contents from "@/constants/contents";
+
 const Header = ({ className, social }) => {
 	return (
 		<div className={className}>
 			<HeaderContainer>
 				<HeaderLogo />
-				<HeaderMenu social={social} />
+				<HeaderMenu social={social} contents={contents} />
 			</HeaderContainer>
 		</div>
 	);

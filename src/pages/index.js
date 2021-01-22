@@ -9,14 +9,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 
-import PodcastList from "@/features/podcast/components/PodcastList";
+import ContentList from "@/features/content/components/ContentList";
 import HomeBanner from "@/features/me/components/HomeBanner";
 
 import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
 
+import { contentsRefs } from "@firebaseApi";
+
 const Home = ({ t, podcasts }) => {
-	return (
+    return (
 		<Fragment>
 			<MetaHeader meta={routes.home.meta} />
             <Header social={social} />
@@ -26,7 +28,7 @@ const Home = ({ t, podcasts }) => {
 			</Section>
 
 			<Section>
-				<PodcastList
+				<ContentList
 					showLink
 					title={t("podcasts.lastEpisodes")}
 					podcasts={podcasts}
@@ -44,7 +46,7 @@ Home.propTypes = {
 };
 
 export const getStaticProps = async () => {
-	const podcasts = await api.podcast.data.getSome(3);
+	const podcasts = await api.content.data.getSome(3);
 	return { props: { podcasts }, revalidate: 600 };
 }
 
