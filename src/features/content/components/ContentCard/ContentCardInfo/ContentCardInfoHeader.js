@@ -22,11 +22,17 @@ export default styled(ContentCardInfoHeader)`
     display: flex;
     flex-direction: column;
     color: #000;
-    height: ${props => props.episode ? "64px" : "32px"};
+    height: 64px;
 
     & h3 {
         font-size: 18px;
         margin: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
     & span {

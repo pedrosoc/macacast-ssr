@@ -14,9 +14,9 @@ import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
 import contents from "@/constants/contents";
 
-import { firebaseDatabase } from "@firebaseApi";
+import contentsStatus from "@/constants/contentsStatus";
 
-const Podcasts = ({ content }) => {
+const Contents = ({ content }) => {
     return (
         <Fragment>
 			<MetaHeader meta={routes.content.meta} content={content} />
@@ -31,8 +31,8 @@ const Podcasts = ({ content }) => {
 	);
 };
 
-Podcasts.propTypes = {
-	podcasts: PropTypes.array,
+Contents.propTypes = {
+	content: PropTypes.array,
 };
 
 export const getStaticPaths = async () => {
@@ -41,9 +41,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const content = contents.find(c => c.route === `/${params.content}`);
-    const data = await api.content.data.getCategoryById(content.id);
-    // const podcasts = await api.content.data.getSomeDifferent(params.id, 3);
-	return { props: { content: data,  }, revalidate: 600 };
+    const data = await api.content.data.getCategoryById(content.id, contentsStatus.published);
+    return { props: { content: data,  }, revalidate: 600 };
 }
 
-export default Podcasts;
+export default Contents;

@@ -25,11 +25,11 @@ if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
-const firebaseFirestore = firebase.firestore();
+// const firebaseFirestore = firebase.firestore();
 const firebaseDatabase = firebase.database();
 
 const contentsRefs = firebaseDatabase.ref("contents");
 
 export { firebaseDatabase, contentsRefs };
 
-export default firebaseFirestore;
+// export default firebaseFirestore;

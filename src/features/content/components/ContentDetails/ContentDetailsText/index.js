@@ -3,11 +3,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import {
+    FacebookShareButton,
+    FacebookMessengerShareButton,
+    TelegramShareButton,
+    TwitterShareButton,
+    WhatsappShareButton,
+    
+    FacebookIcon,
+    FacebookMessengerIcon,
+    TwitterIcon,
+    TelegramIcon,
+    WhatsappIcon
+} from "react-share";
+
 import styles from "@/constants/styles";
+import urls from "@/constants/urls";
 
 const ContentDetailsText = ({ className, post }) => {
-    console.log(post);
-
     const publishedDate = new Date(post.created);
 
 	return (
@@ -15,9 +28,28 @@ const ContentDetailsText = ({ className, post }) => {
             <div className="titleContainer">
                 <h1>{post.title}</h1>
                 <span>{post.description}</span>
-                <div className="authorContainer">
-                    <span className="author">Por {post.author}</span>  - Campinas
-                    <div>Publicado em {publishedDate.toLocaleDateString('pt-BR')} - {publishedDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</div>
+                <div className="extraContainer">
+                    <div className="authorContainer">
+                        <span className="author">Por {post.author}</span>  - Campinas
+                        <div>Publicado em {publishedDate.toLocaleDateString('pt-BR')} - {publishedDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</div>
+                    </div>
+                    <div className="shareContainer">
+                        <FacebookShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                            <FacebookIcon size={32} round />
+                        </FacebookShareButton>
+                        <FacebookMessengerShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                            <FacebookMessengerIcon size={32} round />
+                        </FacebookMessengerShareButton>
+                        <TelegramShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                            <TelegramIcon size={32} round />
+                        </TelegramShareButton>
+                        <TwitterShareButton url={`${urls.website.baseUrl}`}>
+                            <TwitterIcon size={32} round />
+                        </TwitterShareButton>
+                        <WhatsappShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                            <WhatsappIcon size={32} round />
+                        </WhatsappShareButton>
+                    </div>
                 </div>
             </div>
             <hr />
@@ -40,21 +72,50 @@ export default styled(ContentDetailsText)`
             margin-bottom: 30px;
         }
 
-        .authorContainer {
-            font-size: 16px;
+        .extraContainer {
+            display: flex;
+            flex-direction: column;
 
-            .author {
-                font-weight: bold;
+            @media only screen and (min-width: ${styles.breakpoint_medium}) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
             }
-        
-            .city {
-                font-weight: normal;
+
+            .authorContainer {
+                font-size: 16px;
+
+                .author {
+                    font-weight: bold;
+                }
+            
+                .city {
+                    font-weight: normal;
+                }
+            }
+
+            .shareContainer {
+                margin-top: 30px;
+
+                @media only screen and (min-width: ${styles.breakpoint_medium}) {
+                    margin-top: 0;
+                }
+
+                > * {
+                    margin-right: 5px;
+
+                    @media only screen and (min-width: ${styles.breakpoint_medium}) {
+                        margin-left: 5px;
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }
 
     & > hr {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
+        border-top: 1px solid #fff;
     }
 
     & > .text {

@@ -7,10 +7,10 @@ import ContentCard from "../ContentCard";
 
 import styles from "@/constants/styles";
 
-const ContentListHeader = ({ className, podcasts }) => {
+const ContentListHeader = ({ className, posts }) => {
 	return (
 		<div className={className}>
-			{podcasts.map(p => <ContentCard key={p.id} podcast={p} />)}
+			{posts.map(p => <ContentCard key={p.id} post={p} />)}
 		</div>
 	);
 }
@@ -18,7 +18,7 @@ const ContentListHeader = ({ className, podcasts }) => {
 ContentListHeader.propTypes = {
 	className: PropTypes.string,
 	title: PropTypes.string,
-	podcasts: PropTypes.array
+	posts: PropTypes.array
 };
 
 export default styled(ContentListHeader)`

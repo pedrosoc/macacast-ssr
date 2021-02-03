@@ -8,13 +8,13 @@ import { withTranslation, Link } from "@i18n";
 import routes from "@/constants/routes";
 import styles from "@/constants/styles";
 
-const ContentListHeader = ({ className, t, title, showLink }) => {
-	if (showLink)
+const ContentListHeader = ({ className, t, title, link }) => {
+	if (link)
 		return (
 			<div className={className}>
 				<h4>{title}</h4>
-				<Link href={routes.content.url}>
-					<a>{t("podcasts.seeMore")}</a>
+				<Link href={link}>
+					<a>{t("content.seeMore")}</a>
 				</Link>
 			</div>
 		);
@@ -26,7 +26,7 @@ ContentListHeader.propTypes = {
 	className: PropTypes.string,
     t: PropTypes.func,
 	title: PropTypes.string,
-	showLink: PropTypes.bool
+	link: PropTypes.string
 };
 
 export default withTranslation("common")(styled(ContentListHeader)`

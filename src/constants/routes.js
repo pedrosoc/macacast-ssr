@@ -29,8 +29,6 @@ export default {
 		}
 	},
 	content: {
-		url: "/podcasts",
-		title: t => t("header.podcasts"),
 		meta: {
 			title: (t, opt) => t("content.meta.title", opt),
 			description: (t, opt) => t("content.meta.description", opt),
@@ -41,7 +39,6 @@ export default {
 		}
 	},
 	contentPost: {
-		url: "/podcasts/:id",
 		meta: {
 			title: (t, opt) => t("contentPost.meta.title", opt),
 			description: (t, opt) => t("contentPost.meta.description", opt),

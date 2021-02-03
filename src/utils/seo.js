@@ -1,22 +1,21 @@
 import urls from "@/constants/urls";
 
-const createSitemap = podcasts => `<?xml version="1.0" encoding="UTF-8"?>
+const createSitemap = contents => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
             <loc>${urls.website.baseUrl}</loc>
         </url>
         <url>
-            <loc>${urls.website.baseUrl}/podcasts</loc>
-        </url>
-        <url>
             <loc>${urls.website.baseUrl}/sobre</loc>
         </url>
         ${
-            podcasts.map(({ episode }) => `
-                <url>
-                    <loc>${urls.website.baseUrl}/podcasts/${episode}</loc>
-                </url>
-            `).join("")
+            contents.map(c => 
+                c.data.map(d => ` 
+                    <url>
+                        <loc>${urls.website.baseUrl}${c.baseRoute}/${d.id}</loc>
+                    </url>
+                `)
+            ).flat().join("")
         }
     </urlset>`;
 

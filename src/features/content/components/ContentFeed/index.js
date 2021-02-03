@@ -14,6 +14,7 @@ const ContentFeed = ({ t, content }) => {
 	if (!content || isEmpty(content.data))
 		return <Fragment />
 
+        
 	const [first, second, ...otherPosts] = content.data;
 	return (
 		<Fragment>
@@ -34,7 +35,7 @@ const ContentFeed = ({ t, content }) => {
 ContentFeed.propTypes = {
 	className: PropTypes.string,
 	t: PropTypes.func,
-	podcasts: PropTypes.array
+	content: PropTypes.object
 };
 
 export default withTranslation("common")(ContentFeed);

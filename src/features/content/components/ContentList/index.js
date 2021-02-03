@@ -7,22 +7,22 @@ import { isEmpty } from "@/utils/list";
 import ContentListHeader from "./ContentListHeader";
 import ContentListContent from "./ContentListContent";
 
-const PodcastList = ({ title, podcasts, showLink }) => {
-	if (isEmpty(podcasts))
+const ContentList = ({ title, posts, link }) => {
+    if (isEmpty(posts))
 		return <Fragment />
 
 	return (
 		<Fragment>
-			<ContentListHeader title={title} showLink={showLink} />
-			<ContentListContent podcasts={podcasts} />
+			<ContentListHeader title={title} link={link} />
+			<ContentListContent posts={posts} />
 		</Fragment>
 	);
 }
 
-PodcastList.propTypes = {
+ContentList.propTypes = {
 	title: PropTypes.string,
-	podcasts: PropTypes.array,
-	showLink: PropTypes.bool
+	posts: PropTypes.array,
+	link: PropTypes.string
 };
 
-export default PodcastList;
+export default ContentList;

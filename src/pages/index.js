@@ -9,15 +9,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 
-import ContentList from "@/features/content/components/ContentList";
 import HomeBanner from "@/features/me/components/HomeBanner";
+import FullContentResume from "@/features/content/components/FullContentResume";
 
 import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
 
-import { contentsRefs } from "@firebaseApi";
+import contentsStatus from "@/constants/contentsStatus";
 
-const Home = ({ t, podcasts }) => {
+const Home = ({ t, contents }) => {
     return (
 		<Fragment>
 			<MetaHeader meta={routes.home.meta} />
@@ -28,11 +28,7 @@ const Home = ({ t, podcasts }) => {
 			</Section>
 
 			<Section>
-				<ContentList
-					showLink
-					title={t("podcasts.lastEpisodes")}
-					podcasts={podcasts}
-				/>
+				<FullContentResume contents={contents} />
 			</Section>
 
 			<Footer />
@@ -42,12 +38,12 @@ const Home = ({ t, podcasts }) => {
 
 Home.propTypes = {
 	t: PropTypes.func,
-	podcasts: PropTypes.array,
+	contents: PropTypes.array,
 };
 
 export const getStaticProps = async () => {
-	const podcasts = await api.content.data.getSome(3);
-	return { props: { podcasts }, revalidate: 600 };
+    const contents = await api.content.data.getAllByStatus(contentsStatus.published);
+	return { props: { contents }, revalidate: 600 };
 }
 
 export default withTranslation("common")(Home);

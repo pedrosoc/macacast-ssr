@@ -15,8 +15,6 @@ const ContentCard = ({ className, post, spotlight }) => {
 	if (!post)
 		return <Fragment />
 
-    console.log(post);
-
 	return (
 		<Link href={post.route}>
 			<a className={className}>
