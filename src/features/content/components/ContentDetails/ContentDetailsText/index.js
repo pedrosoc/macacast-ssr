@@ -20,10 +20,10 @@ import {
 import styles from "@/constants/styles";
 import urls from "@/constants/urls";
 
-const ContentDetailsText = ({ className, post }) => {
-    const publishedDate = new Date(post.created);
+import { formatDate } from "@/utils/date";
 
-	return (
+const ContentDetailsText = ({ className, post }) => {
+    return (
         <div className={className}>
             <div className="titleContainer">
                 <h1>{post.title}</h1>
@@ -31,7 +31,7 @@ const ContentDetailsText = ({ className, post }) => {
                 <div className="extraContainer">
                     <div className="authorContainer">
                         <span className="author">Por {post.author}</span>  - Campinas
-                        <div>Publicado em {publishedDate.toLocaleDateString('pt-BR')} - {publishedDate.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</div>
+                        <div>Publicado em {formatDate(new Date(post.created))}</div>
                     </div>
                     <div className="shareContainer">
                         <FacebookShareButton url={`${urls.website.baseUrl}${post.route}`}>
