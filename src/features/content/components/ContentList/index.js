@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 
 import PropTypes from "prop-types";
 
-import { isEmpty } from "@/utils/list";
+import { isEmptyList } from "@/utils/list";
 
 import ContentListHeader from "./ContentListHeader";
 import ContentListContent from "./ContentListContent";
 
 const ContentList = ({ title, posts, link }) => {
-    if (isEmpty(posts))
+    if (isEmptyList(posts))
 		return <Fragment />
 
 	return (

@@ -1,5 +1,5 @@
-const isEmpty = obj => {
+const isEmptyList = obj => {
 	return !Array.isArray(obj) || !obj.length;
 };
 
-export { isEmpty };
+export { isEmptyList };

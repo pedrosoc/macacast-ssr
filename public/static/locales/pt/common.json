@@ -54,6 +54,7 @@
         "lastEpisodes": "Últimas publicações",
         "seeMore": "Veja mais +",
         "anotherEpisodes": "Outras publicações",
+        "emptyCategory": "Ainda não temos nenhum conteúdo para essa categoria :(",
         "meta": {
             "title": "{{name}} | Macacast",
             "description": "{{description}}",
@@ -64,7 +65,7 @@
         "title": "Página não encontrada",
         "description": "A página que você está procurando não existe :(",
         "meta": {
-            "title": "Página não encontrada"
+            "title": "Página não encontrada | Macacast"
         }
     }
 }

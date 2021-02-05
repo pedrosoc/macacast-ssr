@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 
 import api from "@api";
+
+import Error from "../404";
 
 import MetaHeader from "@/components/MetaHeader";
 import Header from "@/components/Header";
@@ -17,6 +20,13 @@ import contents from "@/constants/contents";
 import contentsStatus from "@/constants/contentsStatus";
 
 const Contents = ({ content }) => {
+    const router = useRouter();
+    if (router.isFallback)
+		return <Fragment />
+
+	if (!content || !content.id)
+		return <Error />
+
     return (
         <Fragment>
 			<MetaHeader meta={routes.content.meta} content={content} />
@@ -41,8 +51,12 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const content = contents.find(c => c.route === `/${params.content}`);
+    
+    if (!content)
+        return { props: { content: {} }, revalidate: 600 };
+    
     const data = await api.content.data.getCategoryById(content.id, contentsStatus.published);
-    return { props: { content: data,  }, revalidate: 600 };
+    return { props: { content: data }, revalidate: 600 };
 }
 
 export default Contents;

@@ -1,18 +1,17 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 
 import PropTypes from "prop-types";
 
-import api from "@api";
 import { withTranslation } from "@i18n";
 
 import ContentFeedSpotight from "./ContentFeedSpotight";
 import ContentList from "../ContentList";
 
-import { isEmpty } from "@/utils/list";
+import { isEmptyList } from "@/utils/list";
 
 const ContentFeed = ({ t, content }) => {
-	if (!content || isEmpty(content.data))
-		return <Fragment />
+	if (!content || isEmptyList(content.data))
+		return <span>{t("content.emptyCategory")}</span>
 
         
 	const [first, second, ...otherPosts] = content.data;

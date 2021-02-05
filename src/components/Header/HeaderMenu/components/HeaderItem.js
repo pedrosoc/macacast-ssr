@@ -28,7 +28,7 @@ export default styled(HeaderItem)`
 	font-weight: 500;
     margin-bottom: 15px;
 
-	@media only screen and (min-width: ${styles.breakpoint_medium}) {
+	@media only screen and (min-width: ${styles.breakpoint_large}) {
         margin-bottom: 0;
         margin-right: 30px;
         height: fit-content;

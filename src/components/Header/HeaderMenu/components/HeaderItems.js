@@ -5,11 +5,12 @@ import PropTypes from "prop-types";
 
 import styles from "@/constants/styles";
 import routes from "@/constants/routes";
-
-import HeaderItem from "./HeaderItem";
 import { withTranslation } from "@i18n";
 
-const HeaderItems = ({ className, t, contents, closeModal }) => {
+import HeaderItem from "./HeaderItem";
+import contents from "@/constants/contents";
+
+const HeaderItems = ({ className, t, closeModal }) => {
 	return (
 		<div className={className}>
 			<HeaderItem closeModal={closeModal} to={routes.home.url} title={routes.home.title(t)} />
@@ -30,7 +31,7 @@ export default withTranslation("common")(styled(HeaderItems)`
 	flex-direction: column;
 	padding-top: ${styles.container_margin_medium};
 
-	@media only screen and (min-width: ${styles.breakpoint_medium}) {
+	@media only screen and (min-width: ${styles.breakpoint_large}) {
 		flex-direction: row;
 		border-right: 2px solid #000;
 

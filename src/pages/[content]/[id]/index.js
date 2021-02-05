@@ -72,9 +72,16 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const content = contents.find(c => c.route === `/${params.content}`);
+
+    if (!content)
+        return { props: { post: {}, posts: [], content: {} }, revalidate: 1 };
+        
     const apiPost = await api.content.data.getPostById(params.id, content);
     const post = (apiPost || {}).state === contentsStatus.published ? apiPost : {};
-
+    
+    if (!post)
+        return { props: { post: {}, posts: [], content: {} }, revalidate: 1 };
+        
     const lastPosts = await api.content.data.getLastPostsByCategoryID(content, contentsConfig.limit, contentsStatus.published, post.id);
 
     return { props: { post, posts: lastPosts, content }, revalidate: 600 };

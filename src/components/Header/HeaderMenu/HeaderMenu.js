@@ -11,10 +11,10 @@ import HeaderMenuDesktop from "./desktop/HeaderMenuDesktop";
 const HeaderMenu = ({ contents, social }) => {
 	return (
 		<Fragment>
-			<MediaQuery maxDeviceWidth={styles.breakpoint_medium_max}>
+			<MediaQuery maxDeviceWidth={styles.breakpoint_large_max}>
 				<HeaderMenuMobile contents={contents} social={social} />
 			</MediaQuery>
-			<MediaQuery minDeviceWidth={styles.breakpoint_medium}>
+			<MediaQuery minDeviceWidth={styles.breakpoint_large}>
 				<HeaderMenuDesktop contents={contents} social={social}  />
 			</MediaQuery>
 		</Fragment>

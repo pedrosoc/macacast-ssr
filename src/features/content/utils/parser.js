@@ -1,3 +1,5 @@
+import { isEmptyList } from "@/utils/list";
+
 const postListByStatus = (map, baseRoute, status) => {
     if (!map) return [];
 
@@ -53,6 +55,8 @@ const apiFilterLastPosts = (posts, limit, contentRoute, status, actualID) => {
 }
 
 const limitLastPosts = (posts, limit, actualID) => {
+    if (isEmptyList(posts)) return [];
+
     return posts.sort((a, b) => {
         if (a.created < b.created)
             return 1;
