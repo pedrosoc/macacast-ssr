@@ -30,7 +30,7 @@ const ContentDetailsText = ({ className, post }) => {
                 <span>{post.description}</span>
                 <div className="extraContainer">
                     <div className="authorContainer">
-                        <span className="author">Por {post.author}</span>  - Campinas
+                        <span className="author">Por {post.author}</span>
                         <div>Publicado em {formatDate(new Date(post.created))}</div>
                     </div>
                     <div className="shareContainer">

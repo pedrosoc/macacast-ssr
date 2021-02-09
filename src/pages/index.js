@@ -17,11 +17,11 @@ import social from "@/features/me/constants/social";
 
 import contentsStatus from "@/constants/contentsStatus";
 
-const Home = ({ t, contents }) => {
+const Home = ({ t, contents, categories }) => {
     return (
 		<Fragment>
 			<MetaHeader meta={routes.home.meta} />
-            <Header social={social} />
+            <Header categories={categories} social={social} />
 
 			<Section first colored="#000">
 				<HomeBanner />
@@ -39,11 +39,13 @@ const Home = ({ t, contents }) => {
 Home.propTypes = {
 	t: PropTypes.func,
 	contents: PropTypes.array,
+	categories: PropTypes.array,
 };
 
 export const getStaticProps = async () => {
+    const categories = await api.me.data.getCategories();
     const contents = await api.content.data.getAllByStatus(contentsStatus.published);
-	return { props: { contents }, revalidate: 600 };
+	return { props: { contents, categories }, revalidate: 600 };
 }
 
 export default withTranslation("common")(Home);

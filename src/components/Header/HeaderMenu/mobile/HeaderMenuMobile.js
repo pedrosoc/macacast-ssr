@@ -7,17 +7,18 @@ import SVG from "@/components/SVG";
 
 import HeaderMenuMobileContent from "./HeaderMenuMobileContent";
 
-const HeaderMenuMobile = ({ social }) => {
+const HeaderMenuMobile = ({ contents, social }) => {
 	return (
 		<Modal
 			trigger={<SVG name="menu" width="25" />}
-			content={<HeaderMenuMobileContent social={social} />}
+			content={<HeaderMenuMobileContent social={social} contents={contents} />}
 		/>
 	);
 };
 
 HeaderMenuMobile.propTypes = {
-	social: PropTypes.array
+	social: PropTypes.array,
+	contents: PropTypes.array
 };
 
 export default HeaderMenuMobile;

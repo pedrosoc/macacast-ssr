@@ -1,7 +1,16 @@
-// import firebase from "@firebaseApi";
-import { parseResponse } from "@/utils/firebaseUtils";
+import { firebaseDatabase } from "@firebaseApi";
+import parser from "../utils/parser";
 
-// const getSocial = () => firebase.collection("social").get().then(q => parseResponse(q));
-const getSocial = () => {};
+const getCategories = () => new Promise((resolve, reject) => {
+    firebaseDatabase
+        .ref("nav")
+        .on(
+            "value",
+            snapshot => resolve(parser.apiCategories(snapshot.val())),
+            errorObject => reject(errorObject)
+        );
+});
 
-export default { getSocial };
+export default {
+    getCategories
+};

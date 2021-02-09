@@ -15,22 +15,21 @@ import ContentFeed from "@/features/content/components/ContentFeed";
 
 import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
-import contents from "@/constants/contents";
 
 import contentsStatus from "@/constants/contentsStatus";
 
-const Contents = ({ content }) => {
+const Contents = ({ content, categories }) => {
     const router = useRouter();
     if (router.isFallback)
 		return <Fragment />
 
 	if (!content || !content.id)
-		return <Error />
+		return <Error categories={categories} />
 
     return (
         <Fragment>
 			<MetaHeader meta={routes.content.meta} content={content} />
-            <Header social={social} />
+            <Header social={social} categories={categories} />
 
             <Section first>
                 <ContentFeed content={content} />
@@ -42,21 +41,24 @@ const Contents = ({ content }) => {
 };
 
 Contents.propTypes = {
-	content: PropTypes.array,
+	content: PropTypes.object,
+	categories: PropTypes.array,
 };
 
 export const getStaticPaths = async () => {
-    return { paths: contents.map(c => ({ params: { content: c.route.replace("/", "") }})), fallback: true }
+    const categories = await api.me.data.getCategories();
+    return { paths: categories.map(c => ({ params: { content: c.route.replace("/", "") }})), fallback: true }
 }
 
 export const getStaticProps = async ({ params }) => {
-    const content = contents.find(c => c.route === `/${params.content}`);
-    
+    const categories = await api.me.data.getCategories();
+    const content = categories.find(c => c.route === `/${params.content}`);
+
     if (!content)
-        return { props: { content: {} }, revalidate: 600 };
+        return { props: { content: {}, categories }, revalidate: 600 };
     
     const data = await api.content.data.getCategoryById(content.id, contentsStatus.published);
-    return { props: { content: data }, revalidate: 600 };
+    return { props: { content: data, categories }, revalidate: 600 };
 }
 
 export default Contents;

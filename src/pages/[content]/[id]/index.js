@@ -18,18 +18,17 @@ import ContentList from "@/features/content/components/ContentList";
 import social from "@/features/me/constants/social";
 
 import routes from "@/constants/routes";
-import contents from "@/constants/contents";
 import containerTypes from "@/constants/containerTypes";
 import contentsStatus from "@/constants/contentsStatus";
 import contentsConfig from "@/constants/contentsConfig";
 
-const ContentPost = ({ t, post, posts, content }) => {
+const ContentPost = ({ t, post, posts, content, categories }) => {
     const router = useRouter();
     if (router.isFallback)
 		return <Fragment />
 
 	if (!post || !post.id)
-		return <Error />
+		return <Error categories={categories} />
 
     const props = post.contentType === "serie"
         ? { colored: "#000" }
@@ -38,7 +37,7 @@ const ContentPost = ({ t, post, posts, content }) => {
 	return (
 		<Fragment>
             <MetaHeader meta={routes.contentPost.meta} content={post} />
-            <Header social={social} />
+            <Header social={social} categories={categories} />
 
 			<Section first {...props}>
 				<ContentDetails post={post} />
@@ -61,7 +60,8 @@ ContentPost.propTypes = {
     t: PropTypes.func,
     post: PropTypes.object,
     posts: PropTypes.array,
-    content: PropTypes.object
+    content: PropTypes.object,
+    categories: PropTypes.array,
 };
 
 export const getStaticPaths = async () => {
@@ -71,20 +71,21 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const content = contents.find(c => c.route === `/${params.content}`);
+    const categories = await api.me.data.getCategories();
+    const content = categories.find(c => c.route === `/${params.content}`);
 
     if (!content)
-        return { props: { post: {}, posts: [], content: {} }, revalidate: 1 };
+        return { props: { post: {}, posts: [], content: {}, categories }, revalidate: 1 };
         
     const apiPost = await api.content.data.getPostById(params.id, content);
     const post = (apiPost || {}).state === contentsStatus.published ? apiPost : {};
     
     if (!post)
-        return { props: { post: {}, posts: [], content: {} }, revalidate: 1 };
+        return { props: { post: {}, posts: [], content: {}, categories }, revalidate: 1 };
         
     const lastPosts = await api.content.data.getLastPostsByCategoryID(content, contentsConfig.limit, contentsStatus.published, post.id);
 
-    return { props: { post, posts: lastPosts, content }, revalidate: 600 };
+    return { props: { post, posts: lastPosts, content, categories }, revalidate: 600 };
 }
 
 export default withTranslation("common")(ContentPost);
