@@ -5,11 +5,17 @@ import styled from "styled-components";
 
 import SocialShare from "@/components/SocialShare";
 
+import styles from "@/constants/styles";
+
 const ContentDetailsInfoShare = ({ className, title, url }) => {
-	return (
+	const isMobile = useMediaQuery({
+		query: `(max-device-width: ${styles.breakpoint_small_max})`
+	});
+    
+    return (
 		<div className={className}>
             <h4> Compartilhe em: </h4>
-			<SocialShare title={title} url={url} iconSize={50} />
+			<SocialShare title={title} url={url} iconSize={isMobile ? 32 : 50} />
 		</div>
 	);
 };
