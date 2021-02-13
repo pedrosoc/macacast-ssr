@@ -85,7 +85,7 @@ export const getStaticProps = async ({ params }) => {
         
     const lastPosts = await api.content.data.getLastPostsByCategoryID(content, contentsConfig.limit, contentsStatus.published, post.id);
 
-    return { props: { post, posts: lastPosts, content, categories }, revalidate: 600 };
+    return { props: { post, posts: lastPosts, content, categories }, revalidate: 1 };
 }
 
 export default withTranslation("common")(ContentPost);

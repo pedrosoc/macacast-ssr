@@ -55,10 +55,10 @@ export const getStaticProps = async ({ params }) => {
     const content = categories.find(c => c.route === `/${params.content}`);
 
     if (!content)
-        return { props: { content: {}, categories }, revalidate: 600 };
+        return { props: { content: {}, categories }, revalidate: 1 };
     
     const data = await api.content.data.getCategoryById(content.id, contentsStatus.published);
-    return { props: { content: data, categories }, revalidate: 600 };
+    return { props: { content: data, categories }, revalidate: 1 };
 }
 
 export default Contents;

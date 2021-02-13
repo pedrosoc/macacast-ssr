@@ -41,7 +41,7 @@ Error.propTypes = {
 
 export const getStaticProps = async () => {
     const categories = await api.me.data.getCategories();
-    return { props: { categories }, revalidate: 600 };
+    return { props: { categories }, revalidate: 1 };
 }
 
 export default withTranslation("common")(styled(Error)`
