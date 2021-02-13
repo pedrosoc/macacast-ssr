@@ -24,7 +24,7 @@ const ContentDetailsText = ({ className, post }) => {
                         <div>Publicado em {formatDate(new Date(time))}</div>
                     </div>
                     <div className="shareContainer">
-                        <SocialShare url={`${urls.website.baseUrl}${post.route}`} title={post.title} iconSize={32} />
+                        <SocialShare url={`${urls.website.baseUrl}${post.route}`} title={post.title} iconSize={36} />
                     </div>
                 </div>
             </div>
