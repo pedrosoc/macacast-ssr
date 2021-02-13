@@ -15,7 +15,7 @@ const getPostById = (id, content) => new Promise((resolve, reject) => {
 const getLastPostsByCategoryID = (content, limit, status, removePostID) => new Promise((resolve, reject) => {
     firebaseDatabase
         .ref(`contents/${content.id}/data`)
-        .orderByChild("created")
+        .orderByChild("publicationTime")
         .limitToFirst(10)
         .on(
             "value", 

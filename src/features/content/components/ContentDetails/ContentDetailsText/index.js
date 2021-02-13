@@ -23,6 +23,8 @@ import urls from "@/constants/urls";
 import { formatDate } from "@/utils/date";
 
 const ContentDetailsText = ({ className, post }) => {
+    const time = post.publicationTime ? post.publicationTime : post.created;
+
     return (
         <div className={className}>
             <div className="titleContainer">
@@ -31,22 +33,22 @@ const ContentDetailsText = ({ className, post }) => {
                 <div className="extraContainer">
                     <div className="authorContainer">
                         <span className="author">Por {post.author}</span>
-                        <div>Publicado em {formatDate(new Date(post.created))}</div>
+                        <div>Publicado em {formatDate(new Date(time))}</div>
                     </div>
                     <div className="shareContainer">
-                        <FacebookShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                        <FacebookShareButton url={`${urls.website.baseUrl}`} quote={`${post.title} - @macacastpodcast`}>
                             <FacebookIcon size={32} round />
                         </FacebookShareButton>
-                        <FacebookMessengerShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                        <FacebookMessengerShareButton appId={"612818166073904"} url={`${urls.website.baseUrl}${post.route}`}>
                             <FacebookMessengerIcon size={32} round />
                         </FacebookMessengerShareButton>
-                        <TelegramShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                        <TelegramShareButton url={`${urls.website.baseUrl}${post.route}`} title={post.title}>
                             <TelegramIcon size={32} round />
                         </TelegramShareButton>
-                        <TwitterShareButton url={`${urls.website.baseUrl}`}>
+                        <TwitterShareButton url={`${urls.website.baseUrl}${post.route}`} title={`${post.title} - @macacastaapp`} related={["@macacastaapp"]}>
                             <TwitterIcon size={32} round />
                         </TwitterShareButton>
-                        <WhatsappShareButton url={`${urls.website.baseUrl}${post.route}`}>
+                        <WhatsappShareButton url={`${urls.website.baseUrl}${post.route}`} title={post.title}>
                             <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
                     </div>

@@ -36,7 +36,7 @@ const apiContentByStatus = (id, response, status) => {
         ...response,
         id: id,
         contentType: "category",
-        data: postListByStatus(response.data, response.baseRoute, status),
+        data: postListByStatus(response.data, response.baseRoute, status).reverse(),
     };
 };
 
@@ -58,10 +58,10 @@ const limitLastPosts = (posts, limit, actualID) => {
     if (isEmptyList(posts)) return [];
 
     return posts.sort((a, b) => {
-        if (a.created < b.created)
+        if (a.publicationTime < b.publicationTime)
             return 1;
 
-        if (a.created > b.created)
+        if (a.publicationTime > b.publicationTime)
             return -1;
 
         return 0;
