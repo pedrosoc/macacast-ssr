@@ -16,7 +16,7 @@ const getLastPostsByCategoryID = (content, limit, status, removePostID) => new P
     firebaseDatabase
         .ref(`contents/${content.id}/data`)
         .orderByChild("publicationTime")
-        .limitToFirst(10)
+        .limitToLast(10)
         .on(
             "value", 
             snapshot => resolve(parser.apiFilterLastPosts(snapshot.val(), limit, content.route, status, removePostID)),

@@ -17,7 +17,7 @@ const ContentDetailsInfoSocial = ({ t, post }) => {
 			uuid={post.id}
 			title={t("contentPost.avaiableFor")}
 			size="50"
-			distance="20px"
+			distance="10px"
 			fill="#ffffff"
 			socialList={socialList}
 		/>

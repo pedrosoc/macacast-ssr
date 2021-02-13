@@ -3,19 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import {
-    FacebookShareButton,
-    FacebookMessengerShareButton,
-    TelegramShareButton,
-    TwitterShareButton,
-    WhatsappShareButton,
-    
-    FacebookIcon,
-    FacebookMessengerIcon,
-    TwitterIcon,
-    TelegramIcon,
-    WhatsappIcon
-} from "react-share";
+import SocialShare from "@/components/SocialShare";
 
 import styles from "@/constants/styles";
 import urls from "@/constants/urls";
@@ -36,21 +24,7 @@ const ContentDetailsText = ({ className, post }) => {
                         <div>Publicado em {formatDate(new Date(time))}</div>
                     </div>
                     <div className="shareContainer">
-                        <FacebookShareButton url={`${urls.website.baseUrl}`} quote={`${post.title} - @macacastpodcast`}>
-                            <FacebookIcon size={32} round />
-                        </FacebookShareButton>
-                        <FacebookMessengerShareButton appId={"612818166073904"} url={`${urls.website.baseUrl}${post.route}`}>
-                            <FacebookMessengerIcon size={32} round />
-                        </FacebookMessengerShareButton>
-                        <TelegramShareButton url={`${urls.website.baseUrl}${post.route}`} title={post.title}>
-                            <TelegramIcon size={32} round />
-                        </TelegramShareButton>
-                        <TwitterShareButton url={`${urls.website.baseUrl}${post.route}`} title={`${post.title} - @macacastaapp`} related={["@macacastaapp"]}>
-                            <TwitterIcon size={32} round />
-                        </TwitterShareButton>
-                        <WhatsappShareButton url={`${urls.website.baseUrl}${post.route}`} title={post.title}>
-                            <WhatsappIcon size={32} round />
-                        </WhatsappShareButton>
+                        <SocialShare url={`${urls.website.baseUrl}${post.route}`} title={post.title} iconSize={32} />
                     </div>
                 </div>
             </div>

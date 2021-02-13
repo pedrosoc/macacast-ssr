@@ -44,8 +44,11 @@ Home.propTypes = {
 
 export const getStaticProps = async () => {
     const categories = await api.me.data.getCategories();
-    const contents = await api.content.data.getAllByStatus(contentsStatus.published);
-	return { props: { contents, categories }, revalidate: 1 };
+    const allContents = await api.content.data.getAllByStatus(contentsStatus.published);
+
+    const contents = (allContents || []).filter(c => (categories || []).find(a => c.id === a.id));
+    
+    return { props: { contents, categories }, revalidate: 1 };
 }
 
 export default withTranslation("common")(Home);
