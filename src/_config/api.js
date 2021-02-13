@@ -1,4 +1,4 @@
 import me from "@/features/me/api";
-import podcast from "@/features/podcast/api";
+import content from "@/features/content/api";
 
-export default { me, podcast };
+export default { me, content };

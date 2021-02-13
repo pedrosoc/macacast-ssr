@@ -11,7 +11,7 @@ import styles from "@/constants/styles";
 
 const HeaderSocial = ({ className, t, social }) => {
 	const isMobile = useMediaQuery({
-		query: `(max-device-width: ${styles.breakpoint_medium_max})`
+		query: `(max-device-width: ${styles.breakpoint_large_max})`
 	});
 
 	return (
@@ -40,7 +40,7 @@ export default withTranslation("common")(styled(HeaderSocial)`
 	margin: auto;
 	margin-top: ${styles.container_margin_large};
 
-	@media only screen and (min-width: ${styles.breakpoint_medium}) {
+	@media only screen and (min-width: ${styles.breakpoint_large}) {
 		margin-top: 0;
 		margin-left: ${styles.container_margin_medium};
 	}

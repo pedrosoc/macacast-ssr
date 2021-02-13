@@ -28,29 +28,23 @@ export default {
 			icon: images.favicon
 		}
 	},
-	podcasts: {
-		url: "/podcasts",
-		title: t => t("header.podcasts"),
+	content: {
 		meta: {
-			title: t => t("podcasts.meta.title"),
-			description: t => t("podcasts.meta.description"),
-			keywords: t => t("podcasts.meta.keywords"),
-			socialTitle: () => "",
-			url: () => `${urls.website.baseUrl}/podcasts`,
+			title: (t, opt) => t("content.meta.title", opt),
+			description: (t, opt) => t("content.meta.description", opt),
+			keywords: (t, opt) => t("content.meta.keywords", opt),
+			url: opt => `${urls.website.baseUrl}${opt.baseRoute}`,
 			image: () => images.social,
 			icon: images.favicon
 		}
 	},
-	podcastDetails: {
-		url: "/podcasts/:id",
-		urlFor: id => `/podcasts/${id}`,
+	contentPost: {
 		meta: {
-			title: (t, opt) => t("podcast.meta.title", opt),
-			description: (t, opt) => t("podcast.meta.description", opt),
-			keywords: t => t("podcast.meta.keywords"),
-			socialTitle: (t, opt) => t("podcast.meta.socialTitle", opt),
-			url: podcast => `${urls.website.baseUrl}/podcasts/${podcast.episode}`,
-			image: podcast => podcast.img,
+			title: (t, opt) => t("contentPost.meta.title", opt),
+			description: (t, opt) => t("contentPost.meta.description", opt),
+			keywords: t => t("contentPost.meta.keywords"),
+			url: opt => `${urls.website.baseUrl}${opt.route}`,
+			image: opt => opt.img,
 			icon: images.favicon
 		}
 	},

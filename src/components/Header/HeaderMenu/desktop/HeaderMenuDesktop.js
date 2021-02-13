@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 import HeaderItems from "../components/HeaderItems";
 import HeaderSocial from "../components/HeaderSocial";
 
-const HeaderMenuDesktop = ({ className, social }) => {
+const HeaderMenuDesktop = ({ className, contents, social }) => {
 	return (
 		<div className={className}>
-			<HeaderItems />
+			<HeaderItems contents={contents} />
 			<HeaderSocial social={social} />
 		</div>
 	);
@@ -17,7 +17,8 @@ const HeaderMenuDesktop = ({ className, social }) => {
 
 HeaderMenuDesktop.propTypes = {
 	className: PropTypes.string,
-	social: PropTypes.array
+	social: PropTypes.array,
+	contents: PropTypes.array
 };
 
 export default styled(HeaderMenuDesktop)`

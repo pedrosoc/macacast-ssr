@@ -9,28 +9,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 
-import PodcastList from "@/features/podcast/components/PodcastList";
 import HomeBanner from "@/features/me/components/HomeBanner";
+import FullContentResume from "@/features/content/components/FullContentResume";
 
 import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
 
-const Home = ({ t, podcasts }) => {
-	return (
+import contentsStatus from "@/constants/contentsStatus";
+
+const Home = ({ t, contents, categories }) => {
+    return (
 		<Fragment>
 			<MetaHeader meta={routes.home.meta} />
-            <Header social={social} />
+            <Header categories={categories} social={social} />
 
 			<Section first colored="#000">
 				<HomeBanner />
 			</Section>
 
 			<Section>
-				<PodcastList
-					showLink
-					title={t("podcasts.lastEpisodes")}
-					podcasts={podcasts}
-				/>
+				<FullContentResume contents={contents} />
 			</Section>
 
 			<Footer />
@@ -40,12 +38,14 @@ const Home = ({ t, podcasts }) => {
 
 Home.propTypes = {
 	t: PropTypes.func,
-	podcasts: PropTypes.array,
+	contents: PropTypes.array,
+	categories: PropTypes.array,
 };
 
 export const getStaticProps = async () => {
-	const podcasts = await api.podcast.data.getSome(3);
-	return { props: { podcasts }, revalidate: 600 };
+    const categories = await api.me.data.getCategories();
+    const contents = await api.content.data.getAllByStatus(contentsStatus.published);
+	return { props: { contents, categories }, revalidate: 1 };
 }
 
 export default withTranslation("common")(Home);

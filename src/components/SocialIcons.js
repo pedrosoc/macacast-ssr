@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import SVG from "@/components/SVG";
-import { isEmpty } from "@/utils/list";
+import { isEmptyList } from "@/utils/list";
 
 const SocialIcons = ({ className, uuid, title, size, distance, fill, socialList }) => {
-	if (isEmpty(socialList)) {
+	if (isEmptyList(socialList)) {
 		return <Fragment />
 	}
 	
