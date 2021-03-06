@@ -16,6 +16,7 @@ import routes from "@/constants/routes";
 import social from "@/features/me/constants/social";
 
 import contentsStatus from "@/constants/contentsStatus";
+import images from "@/constants/images";
 
 const Home = ({ t, contents, categories }) => {
     return (
@@ -23,7 +24,7 @@ const Home = ({ t, contents, categories }) => {
 			<MetaHeader meta={routes.home.meta} />
             <Header categories={categories} social={social} />
 
-			<Section first colored="#000">
+			<Section first backgroundImage={images.background}>
 				<HomeBanner />
 			</Section>
 

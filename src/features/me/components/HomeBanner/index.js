@@ -11,7 +11,6 @@ import HomeBannerTitle from "./HomeBannerTitle";
 const Home = ({ className }) => {
 	return (
 		<div className={className}>
-			<HomeBannerTitle />
 			<HomeBannerImage />
 		</div>
 	);
@@ -23,8 +22,7 @@ Home.propTypes = {
 
 export default styled(Home)`
 	display: flex;
-	flex-direction: column-reverse;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
 

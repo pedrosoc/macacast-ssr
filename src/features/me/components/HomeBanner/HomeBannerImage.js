@@ -10,7 +10,7 @@ import images from "@/constants/images";
 const HomeBannerImage = ({ className, t }) => {
 	return (
 		<img
-			src={images.logo}
+			src={images.newLogo}
 			alt={t("home.altImage")}
 			className={className}
 		/>
@@ -23,6 +23,6 @@ HomeBannerImage.propTypes = {
 };
 
 export default withTranslation("common")(styled(HomeBannerImage)`
-	min-width: 200px;
-	max-width: 35%;
+	min-width: 250px;
+	max-width: 50%;
 `);
