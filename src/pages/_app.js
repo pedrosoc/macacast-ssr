@@ -18,9 +18,11 @@ const MyApp = ({ Component, pageProps }) => {
         if (!router.asPath.includes('?')) {
             logPageView()
         }
+
+        logEvent("test-category", "test-action")
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
+    
     useEffect(() => {
         // Listen for page changes after a navigation or when the query changes
         router.events.on('routeChangeComplete', logPageView)
@@ -28,7 +30,7 @@ const MyApp = ({ Component, pageProps }) => {
             router.events.off('routeChangeComplete', logPageView)
         }
     }, [router.events])
-
+    
     return (
         <Fragment>
             <GlobalStyle />
