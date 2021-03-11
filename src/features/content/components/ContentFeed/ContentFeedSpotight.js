@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import ContentCard from "../ContentCard";
 
-const ContentFeedSpotight = ({ className, title, first, second }) => {
+const ContentFeedSpotight = ({ className, title, first, second, third }) => {
 	if (!first)
 		return <Fragment />
 
@@ -13,8 +13,9 @@ const ContentFeedSpotight = ({ className, title, first, second }) => {
 		<div className={className}>
 			<h4>{title}</h4>
 			<div>
-				<ContentCard spotlight post={first} />
-				<ContentCard spotlight post={second} />
+				<ContentCard post={first} />
+				<ContentCard post={second} />
+				<ContentCard post={third} />
 			</div>
 		</div>
 	);
@@ -24,7 +25,8 @@ ContentFeedSpotight.propTypes = {
 	className: PropTypes.string,
 	title: PropTypes.string,
 	first: PropTypes.object,
-	second: PropTypes.object
+	second: PropTypes.object,
+	third: PropTypes.object,
 };
 
 export default styled(ContentFeedSpotight)`

@@ -14,13 +14,14 @@ const ContentFeed = ({ t, content }) => {
 		return <span>{t("content.emptyCategory")}</span>
 
         
-	const [first, second, ...otherPosts] = content.data;
+	const [first, second, third, ...otherPosts] = content.data;
 	return (
 		<Fragment>
 			<ContentFeedSpotight
 				title={t("content.lastEpisodes")}
 				first={first}
 				second={second}
+                third={third}
 			/>
 
 			<ContentList

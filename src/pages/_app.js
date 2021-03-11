@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 import GlobalStyle from "@global-style";
 import { appWithTranslation } from "@i18n";
-import { initGA, logPageView } from "@/utils/analytics";
+import { initGA, logEvent, logPageView } from "@/utils/analytics";
 
 const MyApp = ({ Component, pageProps }) => {
     const router = useRouter()
