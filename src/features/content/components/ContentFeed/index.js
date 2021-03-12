@@ -15,13 +15,13 @@ const ContentFeed = ({ t, content }) => {
 
         
 	const [first, second, third, ...otherPosts] = content.data;
-	return (
+    const spotlights = [first, second, third].filter(s => !!s);
+
+    return (
 		<Fragment>
-			<ContentFeedSpotight
+			<ContentList
 				title={t("content.lastEpisodes")}
-				first={first}
-				second={second}
-                third={third}
+				posts={spotlights}
 			/>
 
 			<ContentList
