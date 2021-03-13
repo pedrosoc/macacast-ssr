@@ -24,7 +24,7 @@
         "title": "Sobre o projeto",
         "description": "Nascido em 2019, o projeto de um podcast criado por pontepretanos para pontepretanos tem um objetivo primordial claro: resgatar o interesse dos torcedores e torcedoras pelo clube, com informações quentes, com opiniões isentas e contundentes, com histórias sobre o seu passado e reforçar a identidade da Ponte Preta. O dia a dia do clube, pós e pré-jogo, entrevistas exclusivas com jogadores que marcaram seu nome em nossa história e até bastidores políticos. O Macacast é a voz do pontepretano das arquibancadas na internet.",
         "help": {
-            "title": "Ajude o Macacast",
+            "title": "Ajude o projeto",
             "description": "Se você curte o nosso trabalho, não deixe de nos prestigiar e ajude a melhorar ainda mais a qualidade do seu podcast preferido e a sua experiência como ouvinte. Fazemos o Macacast com muita paixão e, com as doações, podemos fazer ainda melhor e nos dedicar ainda mais ao projeto. O valor será investido na melhoria de materiais, como a compra de microfones para os membros, pagamento de servidores, gravações, e manutenção de outras estruturas.",
             "link": {
                 "description": "Você pode fazer a sua doação de duas formas:",
@@ -33,7 +33,8 @@
                 "single": "Avulsa:",
                 "singleLink": "apoia.se/ajudeomacacast"
             },
-            "sponsor": "Se você deseja ser patrocinador oficial do projeto, entre em contato conosco por meio de nossas plataformas digitais. Temos certeza de que, com a audiência que temos, a parceria renderá muitos frutos para sua empresa."
+            "sponsorTitle": "Anuncie no Macacast",
+            "sponsor": "Se você deseja ser um parceiro do projeto, entre em contato conosco por meio de nossas plataformas digitais. Temos certeza de que, com a audiência que temos, a parceria renderá muitos frutos para sua empresa."
         },
         "meta": {
             "title": "Sobre | Macacast",

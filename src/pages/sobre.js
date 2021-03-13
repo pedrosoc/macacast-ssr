@@ -27,6 +27,10 @@ const About = ({ className, t, categories }) => {
 						<h5>{t("about.title")}</h5>
 						<p>{t("about.description")}</p>
 					</div>
+                    <div className="second">
+						<h4>{t("about.help.sponsorTitle")}</h4>
+						<p>{t("about.help.sponsor")}</p>
+                    </div>
 					<div className="second">
 						<h4>{t("about.help.title")}</h4>
 						<p>{t("about.help.description")}</p>
@@ -43,7 +47,6 @@ const About = ({ className, t, categories }) => {
 								<span className="link">{t("about.help.link.monthlyLink")}</span>
 							</a>
 						</p>
-						<p>{t("about.help.sponsor")}</p>
 					</div>
 				</div>
 			</Section>
