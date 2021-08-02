@@ -3,11 +3,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const ContentCardInfoHeader = ({ className, title, episode }) => {
-	return (
+const ContentCardInfoHeader = ({ className, author, title, episode }) => {
+    const subtitle = episode 
+        ? `Macacast #${episode}` 
+        : author ? `Por ${author}` : "";
+    
+    return (
 		<div className={className}>
 			<h3>{title}</h3>
-			{episode ? <span> Macacast #{episode} </span> : ""}
+			<span>{subtitle}</span>
 		</div>
 	);
 }
@@ -15,6 +19,7 @@ const ContentCardInfoHeader = ({ className, title, episode }) => {
 ContentCardInfoHeader.propTypes = {
 	className: PropTypes.string,
 	title: PropTypes.string,
+	author: PropTypes.string,
 	episode: PropTypes.string
 };
 
@@ -22,7 +27,7 @@ export default styled(ContentCardInfoHeader)`
     display: flex;
     flex-direction: column;
     color: #000;
-    height: 64px;
+    height: 74px;
 
     & h3 {
         font-size: 18px;
@@ -38,6 +43,6 @@ export default styled(ContentCardInfoHeader)`
     & span {
         font-size: 16px;
         color: rgba(0, 0, 0, .54);
-        width: 125px;
+        margin-top: 10px;
     }
 `;

@@ -6,10 +6,10 @@ import styled from "styled-components";
 import ContentCardInfoHeader from "./ContentCardInfoHeader";
 import ContentCardInfoDescription from "./ContentCardInfoDescription";
 
-const ContentCardInfo = ({ className, title, episode, description }) => {
+const ContentCardInfo = ({ className, author, title, episode, description }) => {
 	return (
 		<div className={className}>
-			<ContentCardInfoHeader title={title} episode={episode} />
+			<ContentCardInfoHeader title={title} author={author} episode={episode} />
 			<ContentCardInfoDescription description={description} />
 		</div>
 	);
@@ -18,6 +18,7 @@ const ContentCardInfo = ({ className, title, episode, description }) => {
 ContentCardInfo.propTypes = {
 	className: PropTypes.string,
 	title: PropTypes.string,
+	author: PropTypes.string,
 	episode: PropTypes.string,
 	description: PropTypes.string
 };

@@ -30,7 +30,7 @@ export default styled(HeaderItem)`
 
 	@media only screen and (min-width: ${styles.breakpoint_large}) {
         margin-bottom: 0;
-        margin-right: 30px;
+        margin-right: 40px;
         height: fit-content;
 	}
 `;
