@@ -43,13 +43,13 @@ const ContentPost = ({ t, post, posts, content, categories }) => {
 				<ContentDetails post={post} />
 			</Section>
 
-			<Section>
+			{/*<Section>
 				<ContentList
 					link={content.route}
 					title={t("content.lastEpisodes")}
 					posts={posts}
 				/>
-			</Section>
+            </Section>*/}
 
             <Footer />
 		</Fragment>
